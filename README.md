@@ -42,6 +42,18 @@ The dataset includes key features such as:
 ### 2. **Splitting the Dataset**
 - The dataset was split using `train_test_split`:
   - 70% for training
-  - 30% for testing  
-  ```python
-  x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+  - 15% for validation
+  - 15% for testing  
+
+## 🧩 After Splitting the Dataset
+After splitting the dataset into training (70%) and testing (30%) subsets, I focused on preparing the data for model training. I built a preprocessing pipeline using ColumnTransformer to handle both numeric and categorical variables efficiently.
+Numeric features such as Age, BMI, Exercise_Frequency, Diet_Quality, Sleep_Hours, and Alcohol_Consumption were scaled using StandardScaler to ensure uniform value ranges.
+Categorical features like Smoking_Status were encoded using OneHotEncoder to convert binary categories into numerical format.
+Once preprocessing was complete, I trained three machine learning models:
+
+Linear Regression
+Random Forest Regressor
+Support Vector Regressor (SVR)
+
+Each model was evaluated using Mean Squared Error (MSE) and R² Score on the test data.
+The Random Forest Regressor achieved the best performance, with the lowest MSE (27.60) and the highest R² Score (0.84), demonstrating strong predictive accuracy and generalization on unseen data.
